@@ -14,16 +14,14 @@ def result(request):
 
     print(pH_list)
 
-    #pH_transformer = joblib.load('pH_transformer.sav')
-    #pH_scaler = joblib.load('pH_scaler.sav')
-    #pH_model = joblib.load('pH_model.sav')
+    pH_scaler = joblib.load('pH_scaler.sav')
+    pH_model = joblib.load('pH_model.sav')
 
-    #turb_transformer = joblib.load('turb_transformer.sav')
-    #turb_scaler = joblib.load('turb_scaler.sav')
-    #turb_model = joblib.load('turb_model.sav')
+    turb_scaler = joblib.load('turb_scaler.sav')
+    turb_model = joblib.load('turb_model.sav')
 
-    #main_transformer = joblib.load('transformer.sav')
-    #main_scaler = joblib.load('scaler.sav')
+    main_transformer = joblib.load('transformer.sav')
+    main_scaler = joblib.load('scaler.sav')
     main_model = joblib.load('model.sav')
 
     return render(request,'result.html')
