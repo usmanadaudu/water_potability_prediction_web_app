@@ -32,7 +32,14 @@ def result(request):
 
     X.append(turb)
 
-    X_in = main_scaler.transform(main_transformer.transform(X))
-    potability = main_model.predict([X_in])
+    X_in = main_scaler.transform(main_transformer.transform([X]))
+    potability = main_model.predict(X_in)
 
-    return render(request,'result.html',{'potability':potability})
+    if potability:
+        pot = 'potable'
+    else:
+        pot = 'not potable'
+
+    print(potability,type(potability))
+
+    return render(request,'result.html',{'potability':pot,'X':X_in})
