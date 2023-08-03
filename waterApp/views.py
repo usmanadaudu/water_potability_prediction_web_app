@@ -24,15 +24,15 @@ def result(request):
 
     print(X)
 
-    pH = pH_model(pH_scaler.transform([X]))
+    pH = pH_model.predict(pH_scaler.transform([X]))
 
     X.append(pH)
 
-    turb = turb_model(turb_scaler.transform([X]))
+    turb = turb_model.predict(turb_scaler.transform([X]))
 
     X.append(turb)
 
     X_in = main_scaler.transform(main_transformer.transform(X))
-    potability = main_model([X_in])
+    potability = main_model.predict([X_in])
 
     return render(request,'result.html')
