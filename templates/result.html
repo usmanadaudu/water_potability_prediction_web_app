@@ -7,16 +7,17 @@
 </head>
 <body>
     <h3>This is my result page.</h3><br><br><br>
-    <h5>Your inputs are:</h5><br><br>
-    Sulphate: {{X[0]}}<br>
-    Sulphate: {{X[1]}}<br>
-    Sulphate: {{X[2]}}<br><br>
+    <h5>Your inputs are:</h5>
+    Sulphate: {{X.0}}<br>
+    Sulphate: {{X.1}}<br>
+    Sulphate: {{X.2}}<br><br>
 
-    <h5>Approximated values are:</h5><br><br>
-    pH: {{X[3]}}<br>
-    Turbidity: {{X[4]}}<br><br><br>
+    <h5>Approximated values are:</h5>
+    pH: {{X.3.0}}<br>
+    Turbidity: {{X.4.0}}<br><br><br>
 
 
-    The water in question is {{potability}}.
+    The water in question is {{pot}}.<br><br><br><br>
+    <a href="{% url 'home' %}">Go back to homepage</a>
 </body>
 </html>
