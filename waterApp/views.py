@@ -28,9 +28,13 @@ def result(request):
 
     X.append(pH)
 
+    print(X)
+
     turb = turb_model.predict(turb_scaler.transform([X]))
 
     X.append(turb)
+
+    print(X)
 
     X_in = main_scaler.transform(main_transformer.transform([X]))
     potability = main_model.predict(X_in)
@@ -42,4 +46,4 @@ def result(request):
 
     print(potability,type(potability))
 
-    return render(request,'result.html',{'potability':pot,'X':X_in})
+    return render(request,'result.html',{'pot':pot,'X':X})
