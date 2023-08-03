@@ -35,4 +35,4 @@ def result(request):
     X_in = main_scaler.transform(main_transformer.transform(X))
     potability = main_model.predict([X_in])
 
-    return render(request,'result.html')
+    return render(request,'result.html',{'potability':potability})
