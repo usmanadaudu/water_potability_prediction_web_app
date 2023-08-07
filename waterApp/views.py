@@ -22,19 +22,13 @@ def result(request):
     X.append(request.GET['hardness'])
     X.append(request.GET['solids'])
 
-    print(X)
-
     pH = pH_model.predict(pH_scaler.transform([X]))
 
     X.append(pH)
 
-    print(X)
-
     turb = turb_model.predict(turb_scaler.transform([X]))
 
     X.append(turb)
-
-    print(X)
 
     X_in = main_scaler.transform(main_transformer.transform([X]))
     potability = main_model.predict(X_in)
@@ -42,7 +36,7 @@ def result(request):
     if potability:
         pot = 'potable'
     else:
-        pot = 'not potable'
+        pot = 'NOT potable'
 
     print(potability,type(potability))
 
