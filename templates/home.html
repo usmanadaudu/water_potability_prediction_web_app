@@ -12,11 +12,11 @@
 
         {% csrf_token %}
 
-        Sulfate: <input type="float" required name="sulfate"><br><br>
-        Hardness: <input type="float" required name="hardness"><br><br>
-        Dissolved Solids: <input type="float" required name="solids"><br><br>
+        Sulfate: <input type="float" required name="sulfate"> mg/L<br><br>
+        Hardness: <input type="float" required name="hardness"> mg/l<br><br>
+        Dissolved Solids: <input type="float" required name="solids"> mg/l<br><br>
         pH: <input type="float" disabled name="pH"><br><br>
-        Turbidity: <input type="float" disabled name="pH"><br><br>
+        Turbidity: <input type="float" disabled name="turb"> NTU<br><br>
 
         <input type="submit" name="" value="Check potability">
     </form>
