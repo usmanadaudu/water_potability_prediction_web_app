@@ -4,20 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+     <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
 </head>
 <body>
-    <h3>Water Potability Prediction</h3>
-    <h5>Your inputs are:</h5>
-    Sulphate: {{X.0}} mg/l<br>
-    Hardness: {{X.1}} mg/l<br>
-    Dossolved Solids: {{X.2}} mg/l
+    <div class="water-animation"></div>
+    <div class="container">
+        <div class="row mb-4">
+            <div class="col-md-12 mx-auto text-center">
+                <h2>Water Potability Prediction</h2>
+            </div>
+        </div>    
+        <h5>Your inputs are:</h5>
+        <p>Sulphate: {{X.0}} mg/l<br>
+        Hardness: {{X.1}} mg/l<br>
+        Dissolved Solids: {{X.2}} mg/l</p>
 
-    <h5>Approximated values are:</h5>
-    pH: {{X.3.0}}<br>
-    Turbidity: {{X.4.0}} NTU<br><br><br>
+        <div class="mb-3"></div>
 
+        <h5>Approximated values are:</h5>
+        <p>pH: {{X.3.0}}<br>
+        Turbidity: {{X.4.0}} NTU</p>
 
-    <b>Prediction:</b> water is {{pot}}.<br><br><br><br>
-    <a href="{% url 'home' %}">Go back to homepage</a>
+        <div class="mb-3"></div>
+
+        <p><span class="emphasis">Prediction:</span> water is {{pot}}.</p>
+
+        <br>
+        <a href="{% url 'home' %}">Go back to homepage</a>
+    </div>    
+      
 </body>
 </html>

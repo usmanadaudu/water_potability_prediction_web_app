@@ -4,21 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Water Potabiliy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
 </head>
 <body>
-    This is the homepage for the prediction<br><br><br><br><br><br>
+    <div class="water-animation"></div>
+    <div class="container">
+        <div class="row mb-4">
+            <div class="col-md-10 mx-auto text-center">
+                <h2>Welcome to Water Potability Prediction</h2>
+                <p>This is the homepage for water potability prediction.</p>
+            </div>
+        </div>        
 
-    <form action="{% url 'result' %}">
+        <form action="{% url 'result' %}" method="post" class=" justify-content-center">
 
-        {% csrf_token %}
+            {% csrf_token %}
+            <div>
+                <label for="sulfate">Sulfate:</label>
+                <input type="float" step="any" required name="sulfate" id="sulfate"> mg/l<br><br>
 
-        Sulfate: <input type="float" required name="sulfate"> mg/l<br><br>
-        Hardness: <input type="float" required name="hardness"> mg/l<br><br>
-        Dissolved Solids: <input type="float" required name="solids"> mg/l<br><br>
-        pH: <input type="float" disabled name="pH"><br><br>
-        Turbidity: <input type="float" disabled name="turb"> NTU<br><br>
+                <label for="hardness">Hardness:</label>
+                <input type="float" step="any" required name="hardness" id="hardness"> mg/l<br><br>
 
-        <input type="submit" name="" value="Check potability">
-    </form>
+                <label for="solids">Dissolved Solids:</label>
+                <input type="float" step="any" required name="solids" id="solids"> mg/l<br><br>
+
+                <label for="pH">pH:</label>
+                <input type="float" step="any" disabled name="pH" id="pH"><br><br>
+
+                <label for="turb">Turbidity:</label>
+                <input type="float" step="any" disabled name="turb" id="turb"> NTU<br><br>
+
+                <input type="submit" value="Check Potability">
+            </div>
+        </form>
+    </div>
+
 </body>
 </html>
