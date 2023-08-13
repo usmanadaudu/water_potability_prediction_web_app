@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-+)!@2w_&n=@m6ic2wte7^oqjd_oxb*6e*+42e@1wrb3h_4(il+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['water-potability-predictor-app.onrender.com','localhost']
+ALLOWED_HOSTS = ['water-potability-predictor-app.onrender.com','localhost',
+                 'water-potability-predictor-app-pr-3.onrender.com','water-potability-predictor-app-pr-4.onrender.com',
+                 'water-potability-predictor-app-pr-5.onrender.com','water-potability-predictor-app-pr-3.onrender.com']
 
 
 # Application definition
