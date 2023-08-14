@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Water Potabiliy</title>
-    <link rel="stylesheet" href="{% static 'waterApp/style.css' %}">
+    {% load static %}
     {% load bootstrap5 %}
     {% bootstrap_css %}
     {% bootstrap_javascript %}
+    <link rel="stylesheet" href="{% static 'waterApp/style.css' %}">
 </head>
 <body>
+    
     <div class="water-animation"></div>
     <div class="container">
         <div class="row mb-4">
