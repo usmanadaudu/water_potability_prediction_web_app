@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 import os
-import dj_database_url
+# import dj_database_url
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -84,7 +84,7 @@ DATABASES = {
     }
 }
 
-DATABASES['default'] = dj_database_url.parse("postgres://water_potability_django_render_user:F84okFYTrxcx66NpmlSgscaE5zOkatR8@dpg-cj8isn5jeehc73cc0g0g-a.oregon-postgres.render.com/water_potability_django_render")
+# DATABASES['default'] = dj_database_url.parse("postgres://water_potability_django_render_user:F84okFYTrxcx66NpmlSgscaE5zOkatR8@dpg-cj8isn5jeehc73cc0g0g-a.oregon-postgres.render.com/water_potability_django_render")
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -127,7 +127,7 @@ STATIC_URL = 'static/waterApp/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-STATIC_ROOT = os.path.join(BASE_DIR,"static")
+# STATIC_ROOT = os.path.join(BASE_DIR,"static")
 
 
 STATICFILES_DIRS = [
