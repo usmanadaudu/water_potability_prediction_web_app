@@ -18,9 +18,9 @@ def result(request):
     main_model = joblib.load('model.sav')
 
     X = []
-    X.append(request.GET['sulfate'])
-    X.append(request.GET['hardness'])
-    X.append(request.GET['solids'])
+    X.append(request.POST['sulfate'])
+    X.append(request.POST['hardness'])
+    X.append(request.POST['solids'])
 
     pH = pH_model.predict(pH_scaler.transform([X]))
 

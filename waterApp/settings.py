@@ -10,7 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
-import dj_database_url
+import os
+# import dj_database_url
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,7 +26,9 @@ SECRET_KEY = 'django-insecure-+)!@2w_&n=@m6ic2wte7^oqjd_oxb*6e*+42e@1wrb3h_4(il+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['water-potability-predictor-app.onrender.com','localhost']
+ALLOWED_HOSTS = ['water-potability-predictor-app.onrender.com','localhost',
+                 'water-potability-predictor-app-pr-3.onrender.com','water-potability-predictor-app-pr-4.onrender.com',
+                 'water-potability-predictor-app-pr-5.onrender.com','water-potability-predictor-app-pr-3.onrender.com']
 
 
 # Application definition
@@ -37,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'bootstrap5',
 ]
 
 MIDDLEWARE = [
@@ -54,7 +58,7 @@ ROOT_URLCONF = 'waterApp.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': [BASE_DIR, 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -80,7 +84,7 @@ DATABASES = {
     }
 }
 
-DATABASES['default'] = dj_database_url.parse("postgres://water_potability_django_render_user:F84okFYTrxcx66NpmlSgscaE5zOkatR8@dpg-cj8isn5jeehc73cc0g0g-a.oregon-postgres.render.com/water_potability_django_render")
+# DATABASES['default'] = dj_database_url.parse("postgres://water_potability_django_render_user:F84okFYTrxcx66NpmlSgscaE5zOkatR8@dpg-cj8isn5jeehc73cc0g0g-a.oregon-postgres.render.com/water_potability_django_render")
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -116,9 +120,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = 'static/waterApp/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#STATIC_ROOT = os.path.join(BASE_DIR,"static")
+
+
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
