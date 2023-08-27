@@ -41,7 +41,7 @@ def result(request):
     X.append(nitr)
     X.append(request.POST['tclf'])
 
-    potability = main_model.predict(X)
+    potability = main_model.predict([X])
 
     if potability:
         pot = 'potable'
