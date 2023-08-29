@@ -9,36 +9,36 @@ def result(request):
 
     pH_model = joblib.load('pH_model.sav')
 
-    nitr_model = joblib.load('nitr_model.sav')
+    do_model = joblib.load('do_model.sav')
 
     main_model = joblib.load('model.sav')
 
     X = []
     X.append(request.POST['tempr'])
-    X.append(request.POST['do'])
     X.append(request.POST['cond'])
     X.append(request.POST['bod'])
+    X.append(request.POST['nitr'])
     X.append(request.POST['tclf'])
 
     pH = pH_model.predict([X])
 
     X = []
     X.append(request.POST['tempr'])
-    X.append(request.POST['do'])
     X.append(pH)
     X.append(request.POST['cond'])
     X.append(request.POST['bod'])
+    X.append(request.POST['nitr'])
     X.append(request.POST['tclf'])
 
-    nitr = nitr_model.predict([X])
+    do = do_model.predict([X])
 
     X = []
     X.append(request.POST['tempr'])
-    X.append(request.POST['do'])
+    X.append(do)
     X.append(pH)
     X.append(request.POST['cond'])
     X.append(request.POST['bod'])
-    X.append(nitr)
+    X.append(request.POST['nitr'])
     X.append(request.POST['tclf'])
 
     potability = main_model.predict([X])
