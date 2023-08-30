@@ -20,8 +20,6 @@ def result(request):
     X.append(float(request.POST['nitr']))
     X.append(float(request.POST['tclf']))
 
-    print(X)
-
     pH = pH_model.predict([X])
 
     X = []
