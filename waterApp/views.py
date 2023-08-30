@@ -14,11 +14,13 @@ def result(request):
     main_model = joblib.load('model.sav')
 
     X = []
-    X.append(request.POST['tempr'])
-    X.append(request.POST['cond'])
-    X.append(request.POST['bod'])
-    X.append(request.POST['nitr'])
-    X.append(request.POST['tclf'])
+    X.append(float(request.POST['tempr']))
+    X.append(float(request.POST['cond']))
+    X.append(float(request.POST['bod']))
+    X.append(float(request.POST['nitr']))
+    X.append(float(request.POST['tclf']))
+
+    print(X)
 
     pH = pH_model.predict([X])
 
