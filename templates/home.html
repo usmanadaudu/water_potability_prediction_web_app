@@ -26,25 +26,25 @@
             {% csrf_token %}
             <div>
                 <label for="tempr">Temperature:</label>
-                <input type="float" step="any" required name="tempr" id="tempr"><br><br>
+                <input type="float" step="any" required name="tempr" id="tempr">   °C <br><br>
 
                 <label for="do">D.O:</label>
-                <input type="float" step="any" disabled name="do" id="do"><br><br>
+                <input type="float" step="any" disabled name="do" id="do">   mg/L<br><br>
 
                 <label for="pH">pH:</label>
                 <input type="float" step="any" disabled name="pH" id="pH"><br><br>
 
                 <label for="cond">Conductivity:</label>
-                <input type="float" step="any" required name="cond" id="cond"><br><br>
+                <input type="float" step="any" required name="cond" id="cond">   µS/cm<br><br>
 
                 <label for="bod">B.O.D:</label>
-                <input type="float" step="any" required name="bod" id="bod"><br><br>
+                <input type="float" step="any" required name="bod" id="bod">   ppm<br><br>
 
                 <label for="nitr">Nitrate:</label>
-                <input type="float" step="any" required name="nitr" id="nitr"><br><br>
+                <input type="float" step="any" required name="nitr" id="nitr">   mg/L<br><br>
 
                 <label for="tclf">Total Caliform:</label>
-                <input type="float" step="any" required name="tclf" id="tclf"><br><br>
+                <input type="float" step="any" required name="tclf" id="tclf">   #/100 mL<br><br>
 
                 <input type="submit" value="Check Potability">
             </div>
